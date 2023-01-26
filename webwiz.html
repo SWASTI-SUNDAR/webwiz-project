@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYLE>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', monospace;
+        }
+
+        h1 {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red;
+            font-size: 80;
+        }
+       p{
+        position: absolute;
+        top:15%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        color: blue;
+        font-size: 80 ;
+       }
+
+        h3 {
+            position: absolute;
+            top: 79%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color:black;
+            font-size: 100px;
+            border-color: black;
+
+        }
+
+        h4 {
+            position: absolute;
+            top: 95%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 75px;
+            border-color: #060303;
+        }
+
+        .navbar {
+            width: 85%;
+            margin: 35%;
+            padding: 20px 0;
+            display: flex;
+            align-items: right;
+            justify-content: space-between;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .topnav a {
+            float: left;
+            color: #060303;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: all 0.5s;
+        }
+
+        .topnav {
+
+            overflow: hidden;
+        }
+        #prompt-btn{
+        position:absolute;
+        top: 25%;
+        left: 25%;
+        font-size: larger;
+        background-color: aquamarine;
+     }
+     #change-bg-btn{
+        position:absolute;
+        top: 25%;
+        left: 35%;
+
+        font-size: larger;
+        background-color: aquamarine;
+     }
+     #change-heading{
+        position:absolute;
+        top: 25%;
+        left: 45%;
+        font-size: larger;
+        background-color: aquamarine;
+     }
+     h5{
+      position: absolute;
+      top: 35%;
+      left:25%;
+      font-size: large;
+      background-color: ;
+     }
+     #footer{
+        position: absolute;
+        top: 100%;
+     }
+     #github{
+        position: absolute;
+        top: 101%;
+        
+     }
+    </STYLE>
+</head>
+
+<body>
+    <div class="topnav" id="my topnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <button id="prompt-btn">PROMPT</button>
+        <button id="change-bg-btn">CHANGE BG</button>
+        <button id="change-heading" onclick="changeHeading()">Change Heading</button>
+
+        <script>
+            document.getElementById("prompt-btn").addEventListener("click", function () {
+                alert("Welcome");
+            });
+
+            document.getElementById("change-bg-btn").addEventListener("click", function () {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                document.body.style.backgroundColor = color;
+            });
+
+        </script>
+        <h5 id="heading">hey this is the old heading <br>you can change it by pressing change heading button</h5>
+
+        <script>
+
+            function changeHeading() {
+                setTimeout(function () {
+                    document.getElementById("heading").innerHTML = "THANKS FOR CHANG THE HEADING";
+                }, 5000);
+            }
+        </script>
+
+
+        
+        <h1>
+            WELCOME TO MY WEBSITE
+        </h1>
+        <P>welcome to my website here you can find anything you want</P>
+        
+        <h3 id="live_time"></h3>
+        <div class="caption"></div>
+        
+        <script>
+            let time = document.getElementById("live_time");
+            setInterval(() => {
+
+                let d = new Date();
+
+                time.innerHTML = d.toLocaleTimeString();
+            }, 1000);
+        </script>
+        <h4 id="live_date"></h4>
+        <script>
+            let date = document.getElementById("live_date");
+            setInterval(() => {
+                let e = new Date();
+                date.innerHTML = e.toLocaleDateString();
+            }, 1000);
+
+        </script>
+<hr>
+        <footer id="footer">
+            <a id="github" href="https://github.com/codewithJagan">GITHUB</a>
+                     Copyright © 2023 
+        </footer>
+    
+</body>
+
+</html>
